@@ -4,10 +4,11 @@ import {
   Admin,
   Resource,
   ListGuesser,
-  EditGuesser,
   ShowGuesser,
   DataProvider,
 } from "react-admin";
+import { CartList, CartShow } from "./resource/cart";
+import { ItemEdit } from "./resource/item";
 
 export const App = () => {
   const [dataProvider, setDataProvider] = useState<DataProvider | undefined>();
@@ -35,15 +36,10 @@ export const App = () => {
       <Resource
         name="item"
         list={ListGuesser}
-        edit={EditGuesser}
+        edit={ItemEdit}
         show={ShowGuesser}
       />
-      <Resource
-        name="cart"
-        list={ListGuesser}
-        edit={EditGuesser}
-        show={ShowGuesser}
-      />
+      <Resource name="cart" list={CartList} show={CartShow} />
     </Admin>
   );
 };
