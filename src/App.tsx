@@ -17,10 +17,10 @@ export const App = () => {
     const buildDataProvider = async () => {
       const dataProvider = await buildHasuraProvider({
         clientOptions: {
-          uri: "https://golden-sheepdog-98.hasura.app/v1/graphql",
+          uri: import.meta.env.VITE_GRAPHQL_URL!,
           headers: {
             "x-hasura-admin-secret":
-              "L4FFPcHeeLSwtz3qUR2v3edIcEUKLVhviT3cQo7okN7Qox9bH6wE4j0f91eFL1HP",
+            import.meta.env.VITE_GRAPHQL_ADMIN_SECRET!,
           },
         },
       });
